@@ -96,3 +96,25 @@ WHERE album.AlbumLength = (
             MAX(AlbumLength)
         FROM
             Album album);
+
+
+--#16
+
+SELECT song.Title, song.SongLength 
+FROM Song song
+WHERE song.SongLength = (
+        SELECT 
+            MAX(SongLength)
+        FROM
+            Song song);
+
+--#17
+
+SELECT song.Title AS 'Song Title' , song.SongLength, album.Title AS 'Album Title'
+FROM Song song
+JOIN Album album ON song.AlbumId = album.id
+WHERE song.SongLength = (
+        SELECT 
+            MAX(SongLength)
+        FROM
+            Song song)
