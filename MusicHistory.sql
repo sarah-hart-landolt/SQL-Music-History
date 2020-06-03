@@ -36,4 +36,11 @@ LEFT JOIN Song song on al.Id= song.AlbumId
 WHERE song.AlbumId IS NULL  
 
 --#7
-INSERT INTO Artist (ArtistName, YearEstablished) VALUES ('St. Vincent', 2005)
+INSERT INTO Artist (ArtistName, YearEstablished) VALUES ('St. Vincent', 2005);
+delete from Artist where Id = 1003;
+
+
+INSERT INTO Album (Title, ReleaseDate, AlbumLength, Label, ArtistId, GenreId) VALUES ('St. Vincent', '2/24/1014', 4004,'Loma Vista', 1004, 2);
+
+
+SELECT * from Album
